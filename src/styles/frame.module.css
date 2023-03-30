@@ -1,0 +1,50 @@
+.frameContainer {
+  bottom: max(20px, 4vmin);
+  left: max(20px, 4vmin);
+  margin: 0;
+  mix-blend-mode: diffeence;
+  padding: 0;
+  pointer-events: none;
+  position: fixed;
+  right: max(20px, 4vmin);
+  top: max(20px, 4vmin);
+  z-index: 10;
+}
+
+.horizontalFrame {
+  background-color: #F1DAC4;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.horizontalFrameLeft {
+  left: 0;
+  right: auto;
+}
+
+.horizontalFrameRight {
+  left: auto;
+  right: 0;
+}
+
+.verticalFrame {
+  background-color: #F1DAC4;
+  height: 1px;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+
+.verticalFrameTop {
+  top: 0;
+  bottom: auto;
+}
+
+.verticalFrameBottom {
+  top: 0;
+  bottom: auto;
+}
