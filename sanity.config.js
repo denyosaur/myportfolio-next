@@ -5,7 +5,6 @@ import { schemaTypes } from './src/schemas';
 import { sanityTheme } from './sanityTheme';
 
 import { NavbarIcon } from './assets/icons';
-import { StudioNavbar } from './src/components/StudioNavbar';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
@@ -23,7 +22,6 @@ export default defineConfig({
   studio: {
     components: {
       logo: NavbarIcon,
-      navbar: StudioNavbar,
     }
   },
   theme: sanityTheme,

@@ -9,6 +9,7 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: Rule => Rule.required().warning('Must have a name!'),
     }),
     defineField({
       name: 'image',

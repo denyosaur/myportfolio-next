@@ -30,7 +30,7 @@ export default defineType({
       validation: Rule => Rule.required().min(8).max(200),
     }),
     defineField({
-      name: 'Instagram',
+      name: 'instagram',
       title: 'Instagram',
       type: 'url',
       validation: Rule => Rule.required().min(8).max(200),

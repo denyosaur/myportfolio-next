@@ -10,6 +10,14 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: { type: 'author' },
+      validation: Rule => Rule.required().warning('Must have a name!'),
+    }),
+    defineField({
+      description: 'Short elevator pitch',
+      name: 'elevatorPitch',
+      title: 'ElevatorPitch',
+      type: 'text',
+      validation: Rule => Rule.min(1).max(200),
     }),
     defineField({
       description: 'More details about you',

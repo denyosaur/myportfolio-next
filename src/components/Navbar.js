@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-function Navbar() {
+function Navbar({ author }) {
   return (
-    <header className="flex flex-col items-start justify-betwen w-75">
-      <h1 className="text-5xl">Daniel H Kim</h1>
+    <header className="flex flex-col font-thin items-start justify-betwen w-80">
+      <h1 className="text-5xl">{author}</h1>
       <h2 className="text-1xl ml-0.5 mb-20">Software Engineer//Web Developer</h2>
       <div className="flex flex flex-col">
         <Link
