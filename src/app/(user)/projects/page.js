@@ -3,17 +3,17 @@ import { groq } from "next-sanity";
 import { client } from '../../../../lib/sanity.client'
 
 import PreviewSuspense from '@component/components/PreviewSuspense';
-import AboutPage from "@component/components/About/AboutPage";
-import PreviewAboutPage from "@component/components/About/PreviewAboutPage";
+import ProjectsPage from "@component/components/Projects/ProjectsPage";
+import PreviewProjectsPage from "@component/components/Projects/PreviewProjectsPage";
 
-export default async function About() {
+export default async function Projects() {
   const authorQuery = groq`*[_type=='author'][0].name`;
   const authorReq = await client.fetch(authorQuery);
-  const aboutQuery = groq`
-    *[_type == "about" && author._ref in *[_type=="author" && name=="${authorReq}"]._id ]
-    { about, resumeLink, skills }[0]
+  const projectsQuery = groq`
+    *[_type == "projects" && author._ref in *[_type=="author" && name=="${authorReq}"]._id ]
+    { projectName, projectUrl, githubLink, image, tools }
   `;
-  const aboutReq = await client.fetch(aboutQuery);
+  const projectsReq = await client.fetch(projectsQuery);
 
   if (previewData()) {
     return <PreviewSuspense
@@ -24,14 +24,14 @@ export default async function About() {
       )}
     >
       <div className="flex justify-end items-end w-full h-full" >
-        <PreviewAboutPage query={aboutQuery} />
+        <PreviewProjectsPage query={projectsQuery} />
       </div>
     </PreviewSuspense>
   }
 
   return (
     <div className="flex justify-end items-end w-full h-full">
-      <AboutPage aboutInfo={aboutReq} />
+      <ProjectsPage projects={projectsReq} />
     </div>
   )
 };

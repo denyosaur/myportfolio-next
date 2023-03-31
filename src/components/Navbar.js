@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Navbar({ author }) {
   return (
-    <header className="flex flex-col font-thin items-start justify-betwen w-80">
+    <header className="flex flex-col font-thin items-start justify-betwen w-[25rem]">
       <h1 className="text-5xl">{author}</h1>
       <h2 className="text-1xl ml-0.5 mb-20">Software Engineer//Web Developer</h2>
       <div className="flex flex flex-col">

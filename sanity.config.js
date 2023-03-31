@@ -4,7 +4,7 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './src/schemas';
 import { sanityTheme } from './sanityTheme';
 
-import { NavbarIcon } from './assets/icons';
+import NavbarIcon from './public/icons/NavbarIcon';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;

@@ -89,6 +89,10 @@ a {
   text-decoration: none;
 }
 
+.image {
+  filter: blur(0.1rem) brightness(20%) grayscale(95%);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

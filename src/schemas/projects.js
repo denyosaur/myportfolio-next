@@ -48,6 +48,13 @@ export default defineType({
       type: 'text',
       validation: Rule => Rule.max(500).warning('500 characters only!'),
     }),
+    defineField({
+      description: 'Enter tools used here',
+      name: 'tools',
+      title: 'Tools',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
   ],
   preview: {
     select: {
