@@ -2,36 +2,36 @@ import Link from "next/link";
 
 function Navbar({ author }) {
   return (
-    <header className="flex flex-col font-thin items-start justify-betwen w-[25rem]">
-      <h1 className="text-5xl">{author}</h1>
-      <h2 className="text-1xl ml-0.5 mb-20">Software Engineer//Web Developer</h2>
-      <div className="flex flex flex-col">
+    <nav className="flex flex-col font-thin items-start justify-betwen w-[30rem]">
+      <header className="text-5xl">{author}</header>
+      <h1 className="text-1xl ml-0.5 mb-20">Software Engineer//Web Developer</h1>
+      <div className="flex flex-col text-[1.6rem]">
         <Link
-          className="text-4xl m-[5px]"
+          className=""
           href="/"
         >
           Home
         </Link>
         <Link
-          className="text-4xl m-[5px]"
+          className=""
           href="/about"
         >
           About
         </Link>
         <Link
-          className="text-4xl m-[5px]"
+          className=""
           href="/projects"
         >
           Projects
         </Link>
         <Link
-          className="text-4xl m-[5px]"
+          className=""
           href="/contact"
         >
           Contact
         </Link>
       </div>
-    </header>
+    </nav>
   )
 }
 
