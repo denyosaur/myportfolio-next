@@ -19,14 +19,15 @@ async function RootLayout({ children }) {
       <body>
         <div className="relative h-screen font-thin">
           <Frame />
-          <div className="absolute flex flex-col w-[94.5vw] h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[1] sm:flex-row sm:p-9">
+          <div className="absolute flex flex-col w-[94.5vw] h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[2] sm:flex-row sm:p-9">
             <Navbar author={author} />
-
-            {children}
-
+            <div className="h-40 w-full sm:hidden"></div>
+            <div className="flex h-full w-full px-5 pb-5 sm:p-0">
+              {children}
+            </div>
           </div>
         </div>
-        <div>
+        <div className="z-[1]">
           <video
             autoPlay
             className="absolute border border-[#F1DAC4] object-cover w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-0"
