@@ -5,7 +5,7 @@ function ContactPage({ contacts }) {
   const contactKeys = Object.keys(contacts);
 
   return (
-    <div className="flex items-end flex-col font-thin text-2xl w-80" >
+    <div className="flex items-end flex-col text-2xl w-80" >
       {contactKeys.map(page => {
         const IconToRender = iconDictionary[page];
 

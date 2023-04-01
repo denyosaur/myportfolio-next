@@ -1,7 +1,7 @@
 function AboutPage({ aboutInfo: { about, resumeLink, skills } }) {
 
   return (
-    <div className="flex flex-col justify-between font-thin text-2xl w-full h-full text-base" >
+    <div className="flex flex-col justify-between text-2xl w-full h-full text-base" >
       <div>
         {skills.map((skill, index) => {
           return index === skills.length - 1 ? `${skill}` : `${skill}/ /`
