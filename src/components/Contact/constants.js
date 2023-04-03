@@ -1,8 +1,8 @@
-import Email from '/public/icons/email.svg';
-import Facebook from '/public/icons/facebook.svg';
-import Github from '/public/icons/github.svg';
-import Instagram from '/public/icons/instagram.svg';
-import Linkedin from '/public/icons/linkedin.svg';
+import email from '/public/icons/email.svg';
+import facebook from '/public/icons/facebook.svg';
+import github from '/public/icons/github.svg';
+import instagram from '/public/icons/instagram.svg';
+import linkedin from '/public/icons/linkedin.svg';
 
 export const iconDictionary = {
   email: email,
