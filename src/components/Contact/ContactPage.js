@@ -12,7 +12,7 @@ function ContactPage({ contacts }) {
         return (
           <div key={page} className="mb-3">
             <a
-              className="flex flex-row items-end"
+              className="flex flex-row items-end transition duration-400 hover:opacity-60"
               href={page !== "email" ? contacts[page] : `mailto:${contacts[page]}`}
               rel="noopener noreferrer"
               target="_blank"

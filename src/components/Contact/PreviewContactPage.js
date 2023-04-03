@@ -6,7 +6,7 @@ import ContactPage from './ContactPage';
 
 function PreviewContactPage({ query }) {
   const contactInfo = usePreview(null, query);
-  console.log(contactInfo)
+
   return <ContactPage contacts={contactInfo} />
 }
 

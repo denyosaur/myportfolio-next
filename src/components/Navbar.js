@@ -30,7 +30,7 @@ function Navbar({ author }) {
         <div className="flex flex-row items-center">
           <Arrow className={`${arrowClassNames} ${pathname === "/" ? "opacity-100 visible" : "opacity-0 invisible"}`} />
           <Link
-            className=""
+            className="transition duration-400 hover:opacity-60"
             href="/"
           >
             Home
@@ -39,7 +39,7 @@ function Navbar({ author }) {
         <div className="flex flex-row items-center">
           <Arrow className={`${arrowClassNames} ${pathname === "/about" ? "opacity-100 visible" : "opacity-0 invisible"}`} />
           <Link
-            className=""
+            className="transition duration-400 hover:opacity-60"
             href="/about"
           >
             About
@@ -48,7 +48,7 @@ function Navbar({ author }) {
         <div className="flex flex-row items-center">
           <Arrow className={`${arrowClassNames} ${pathname === "/projects" ? "opacity-100 visible" : "opacity-0 invisible"}`} />
           <Link
-            className=""
+            className="transition duration-400 hover:opacity-60"
             href="/projects"
           >
             Projects
@@ -57,7 +57,7 @@ function Navbar({ author }) {
         <div className="flex flex-row items-center">
           <Arrow className={`${arrowClassNames} ${pathname === "/contact" ? "opacity-100 visible" : "opacity-0 invisible"}`} />
           <Link
-            className=""
+            className="transition duration-400 hover:opacity-60"
             href="/contact"
           >
             Contact
