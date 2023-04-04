@@ -9,9 +9,13 @@ import Burger from '/public/icons/Burger.svg'
 import Cross from '/public/icons/Cross.svg'
 
 function Navbar({ author }) {
-  const [navButton, setNavButton] = useState(true);
+  const [navButton, setNavButtonClosed] = useState(true);
   const pathname = usePathname();
   const arrowClassNames = 'left-3 transition-all duration-1000 sm:absolute';
+  const clickHandler = () => {
+    console.log("ssss")
+    setNavButtonClosed(true);
+  };
 
   return (
     <nav className="absolute top-0 flex flex-col h-30 w-full p-3 bg-[#0D0C1D] z-[2] sm:static sm:bg-transparent sm:flex-col sm:w-[30rem] sm:h-80 sm:p-0">
@@ -21,7 +25,7 @@ function Navbar({ author }) {
           <h2 className="text-1xl ml-0.5 mb-2 sm:mb-20">Software Engineer//Web Developer</h2>
         </header>
         <div className="block sm:hidden">
-          <button onClick={() => setNavButton(!navButton)}>
+          <button onClick={() => setNavButtonClosed(!navButton)}>
             {navButton ? <Burger /> : <Cross />}
           </button>
         </div>
@@ -32,6 +36,7 @@ function Navbar({ author }) {
           <Link
             className="transition duration-400 hover:opacity-60"
             href="/"
+            onClick={() => clickHandler()}
           >
             Home
           </Link>
@@ -41,6 +46,7 @@ function Navbar({ author }) {
           <Link
             className="transition duration-400 hover:opacity-60"
             href="/about"
+            onClick={() => clickHandler()}
           >
             About
           </Link>
@@ -50,6 +56,7 @@ function Navbar({ author }) {
           <Link
             className="transition duration-400 hover:opacity-60"
             href="/projects"
+            onClick={() => clickHandler()}
           >
             Projects
           </Link>
@@ -59,6 +66,7 @@ function Navbar({ author }) {
           <Link
             className="transition duration-400 hover:opacity-60"
             href="/contact"
+            onClick={() => clickHandler()}
           >
             Contact
           </Link>

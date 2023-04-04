@@ -43,7 +43,7 @@ function Project({ project: {
             </a>
           </h4>
           <span className="text-base">
-            {tools.map((tool, index) => {
+            {!!tools && tools.map((tool, index) => {
               return index === tools.length - 1 ? `${tool}` : `${tool}/ /`
             })}
           </span>

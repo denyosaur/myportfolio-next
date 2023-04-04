@@ -26,16 +26,16 @@ async function RootLayout({ children }) {
               {children}
             </div>
           </div>
-        </div>
-        <div className="absolute w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]">
-          <video
-            autoPlay
-            className="object-cover w-full h-full"
-            loop
-            muted
-          >
-            <source src="/backgroundVideo.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]">
+            <video
+              autoPlay
+              className="object-cover w-full h-full"
+              loop
+              muted
+            >
+              <source src="/backgroundVideo.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </body>
     </html>
