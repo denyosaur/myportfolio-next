@@ -13,7 +13,6 @@ function Navbar({ author }) {
   const pathname = usePathname();
   const arrowClassNames = 'left-3 transition-all duration-1000 sm:absolute';
   const clickHandler = () => {
-    console.log("ssss")
     setNavButtonClosed(true);
   };
 
