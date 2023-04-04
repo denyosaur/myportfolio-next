@@ -27,10 +27,10 @@ async function RootLayout({ children }) {
             </div>
           </div>
         </div>
-        <div className="z-[1]">
+        <div className="absolute w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]">
           <video
             autoPlay
-            className="absolute border border-[#F1DAC4] object-cover w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-0"
+            className="object-cover w-full h-full"
             loop
             muted
           >
