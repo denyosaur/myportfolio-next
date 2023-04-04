@@ -1,13 +1,26 @@
 import ExternalIcon2 from '/public/icons/ExternalIcon2.svg';
-import { iconDictionary } from './constants';
+import EmailIcon from '/public/icons/EmailIcon.svg';
+import FacebookIcon from '/public/icons/FacebookIcon.svg';
+import GithubIcon from '/public/icons/GithubIcon.svg';
+import InstagramIcon from '/public/icons/InstagramIcon.svg';
+import LinkedinIcon from '/public/icons/LinkedinIcon.svg';
+
+//import { iconDictionary } from './constants';
 
 function ContactPage({ contacts }) {
   const contactKeys = Object.keys(contacts);
+  const iconToRender = {
+    email: EmailIcon,
+    facebook: FacebookIcon,
+    github: GithubIcon,
+    instagram: InstagramIcon,
+    linkedin: LinkedinIcon,
+  };
 
   return (
     <div className="flex items-end flex-col text-2xl w-80" >
       {contactKeys.map(page => {
-        const IconToRender = iconDictionary[page];
+        const IconToRender = iconToRender[page];
 
         return (
           <div key={page} className="mb-3">
