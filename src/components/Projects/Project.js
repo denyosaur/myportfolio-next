@@ -16,7 +16,7 @@ function Project({ project: {
     >
       <div className="flex justify-end relative h-36 group-hover:brightness-80">
         <Image
-          className="object-contain object-left image"
+          className="object-fill sm:object-contain object-left image"
           src={urlFor(image).url()}
           alt={projectName}
           fill
