@@ -21,7 +21,7 @@ function Project({ project: {
           alt={projectName}
           fill
         />
-        <div className="relative bottom-0 w-full flex-col left-5 sm:left-20 sm:top-3">
+        <div className="relative bottom-0 w-full flex-col left-5 pt-2 sm:left-20 sm:top-4 sm:pt-0">
           <h3 className="text-5xl">
             <a
               className="flex transition duration-400 hover:opacity-60"
