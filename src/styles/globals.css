@@ -89,10 +89,12 @@ a {
   text-decoration: none;
 }
 
-.bodyContainer {
-  height: calc(100%);
-  min-height: -webkit-fill-available;
-  min-height: 100vh;
+.externalIcon {
+  -moz-transform: rotate(45.1deg);
+  -ms-transform: rotate(45.1deg);
+  -o-transform: rotate(45.1deg);
+  -webkit-transform: rotate(45.1deg);
+  transform: rotate(45.1deg);
 }
 
 .image {
