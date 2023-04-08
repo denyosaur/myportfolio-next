@@ -12,7 +12,7 @@ function Project({ project: {
 
   return (
     <div
-      className="flex flex-col mt-12 w-80 group sm:w-96 transition duration-400 hover:brightness-150 "
+      className="flex flex-col mt-9 s:mt-12 w-80 group sm:w-96 transition duration-400 hover:brightness-150 "
     >
       <div className="flex justify-end relative h-36 group-hover:brightness-80">
         <Image
