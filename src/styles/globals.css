@@ -91,6 +91,8 @@ a {
 
 .bodyContainer {
   height: calc(100%);
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
 }
 
 .image {
