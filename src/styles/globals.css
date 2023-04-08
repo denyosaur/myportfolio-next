@@ -89,6 +89,10 @@ a {
   text-decoration: none;
 }
 
+.bodyContainer {
+  height: 100dvh;
+}
+
 .image {
   filter: blur(0.1rem) brightness(20%) grayscale(95%);
 }
