@@ -17,7 +17,7 @@ async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="bodyContainer font-thin">
+        <div className="h-full font-thin sm:h-screen">
           <Frame />
           <div className="absolute flex flex-col w-[94.5vw] h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[2] sm:flex-row sm:p-9">
             <Navbar author={author} />
