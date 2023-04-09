@@ -7,6 +7,8 @@ Portfolio site that showcases my skills and information about myself.
 
 [https://dhkportfolio.dev/](https://dhkportfolio.dev/)
 
+*NOTE: [Github reposiory](https://github.com/denyosaur/MyPortfolio) for the previous version of MyPortfolio site built with React.js and Express*
+
 **Purpose**
 ---------------
 
