@@ -20,7 +20,7 @@ async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="relative h-screen font-thin">
+        <div className="h-full font-thin sm:h-screen">
           <Frame />
           <Page author={author}>
             {children}

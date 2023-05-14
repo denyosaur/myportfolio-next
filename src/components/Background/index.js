@@ -68,5 +68,3 @@ const Background = ({ setGrid }) => {
 }
 
 export default Background;
-
-//createTiles(columns * rows)

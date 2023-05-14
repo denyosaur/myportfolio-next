@@ -89,6 +89,14 @@ a {
   text-decoration: none;
 }
 
+.externalIcon {
+  -moz-transform: rotate(45.1deg);
+  -ms-transform: rotate(45.1deg);
+  -o-transform: rotate(45.1deg);
+  -webkit-transform: rotate(45.1deg);
+  transform: rotate(45.1deg);
+}
+
 .image {
   filter: blur(0.1rem) brightness(20%) grayscale(95%);
 }
