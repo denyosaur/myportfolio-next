@@ -1,8 +1,11 @@
+
 import { groq } from "next-sanity";
 import { client } from '../../../lib/sanity.client'
 
+import Background from '../../components/Background';
 import Navbar from '../../components/Navbar';
 import Frame from '../../components/Frame';
+import Page from '../../components/Page';
 import "../../styles/globals.css";
 
 export const metadata = {
@@ -19,23 +22,9 @@ async function RootLayout({ children }) {
       <body>
         <div className="relative h-screen font-thin">
           <Frame />
-          <div className="absolute flex flex-col w-[94.5vw] h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[2] sm:flex-row sm:p-9">
-            <Navbar author={author} />
-            <div className="h-40 w-full sm:hidden"></div>
-            <div className="flex h-full w-full px-5 pb-5 sm:p-0">
-              {children}
-            </div>
-          </div>
-          <div className="absolute w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]">
-            <video
-              autoPlay
-              className="object-cover w-full h-full"
-              loop
-              muted
-            >
-              <source src="/backgroundVideo.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <Page author={author}>
+            {children}
+          </Page>
         </div>
       </body>
     </html>
