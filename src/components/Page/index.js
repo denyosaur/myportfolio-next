@@ -4,18 +4,12 @@ import anime from 'animejs/lib/anime.es.js';
 
 import Background from '../Background';
 import Navbar from '../Navbar';
+import { colors } from './constants';
 
 const Page = ({ author, children }) => {
   const [count, setCount] = useState(0);
   const [grid, setGrid] = useState({ columns: 0, rows: 0 });
 
-  const colors = [
-    'rgb(13, 27, 42)',
-    'rgb(27, 38, 59)',
-    'rgb(65, 90, 119)',
-    'rgb(119, 141, 169)',
-    'rgb(224, 225, 221)',
-  ]
   const handleClick = (event) => {
     const x = event.clientX;
     const y = event.clientY;

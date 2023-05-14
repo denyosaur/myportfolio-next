@@ -39,7 +39,7 @@ const Background = ({ setGrid }) => {
     }
   }, []);
 
-  const dropzoneStyle = () => ({
+  const gridStyles = () => ({
     gridTemplateRows: `repeat(${rows}, 1fr)`,
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
     overflow: 'hidden',
@@ -58,7 +58,7 @@ const Background = ({ setGrid }) => {
       <div
         ref={gridRef}
         className={`absolute tile-grid grid h-full w-full opacity-80`}
-        style={dropzoneStyle()}
+        style={gridStyles()}
       >
         {createTiles(columns * rows)}
       </div>
