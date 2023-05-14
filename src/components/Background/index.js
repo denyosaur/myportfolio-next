@@ -1,5 +1,6 @@
 "use client"
 import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
+import anime from 'animejs/lib/anime.es.js';
 
 import Tile from './tile';
 
@@ -27,6 +28,15 @@ const Background = ({ setGrid }) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize, false);
     setGrid({ columns, rows });
+
+    anime({
+      targets: '.tile',
+      backgroundColor: 'rgb(27, 38, 59)',
+      delay: anime.stagger(40, {
+        grid: [columns, rows],
+        from: 1,
+      })
+    })
   }, [columns, rows, setGrid]);
 
 
