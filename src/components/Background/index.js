@@ -1,7 +1,6 @@
 "use client"
 import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
 
-import './Background.css';
 import Tile from './tile';
 
 const Background = ({ setGrid }) => {
@@ -47,7 +46,7 @@ const Background = ({ setGrid }) => {
   });
 
   return (
-    <div className="absolute w-[95vw] h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]" >
+    <div className="absolute w-[95vw] h-[82.5vh] sm:h-[94vh] m-auto left-0 right-0 top-0 bottom-0 z-[1]" >
       <video
         autoPlay
         className="absolute object-cover w-full h-full"

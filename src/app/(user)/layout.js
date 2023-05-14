@@ -2,8 +2,6 @@
 import { groq } from "next-sanity";
 import { client } from '../../../lib/sanity.client'
 
-import Background from '../../components/Background';
-import Navbar from '../../components/Navbar';
 import Frame from '../../components/Frame';
 import Page from '../../components/Page';
 import "../../styles/globals.css";

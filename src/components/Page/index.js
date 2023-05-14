@@ -27,7 +27,7 @@ const Page = ({ author, children }) => {
     anime({
       targets: '.tile',
       backgroundColor: colors[count % (colors.length - 1)],
-      delay: anime.stagger(30, {
+      delay: anime.stagger(40, {
         grid: [grid.columns, grid.rows],
         from: index,
       })
@@ -42,7 +42,7 @@ const Page = ({ author, children }) => {
   return (
     <>
       <div
-        className="absolute flex flex-col w-[94.5vw] h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[2] sm:flex-row sm:p-9"
+        className="absolute flex flex-col w-[94.2vw] h-[82.5vh] sm:h-[93.5vh] m-auto left-0 right-0 top-0 bottom-0 z-[2] sm:flex-row sm:p-9"
         onClick={handleClick}
       >
         <Navbar author={author} />
