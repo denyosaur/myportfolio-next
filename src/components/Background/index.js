@@ -26,7 +26,7 @@ const Background = ({ setGrid }) => {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize, false);
+    window.addEventListener('resize', handleResize, false);
     setGrid({ columns, rows });
 
     anime({
@@ -37,6 +37,7 @@ const Background = ({ setGrid }) => {
         from: 1,
       })
     })
+    return window.removeEventListener('resize', handleResize);
   }, [columns, rows, setGrid]);
 
 
