@@ -5,6 +5,7 @@ import { client } from '../../../lib/sanity.client'
 import Frame from '../../components/Frame';
 import Page from '../../components/Page';
 import "../../styles/globals.css";
+import 'easymde/dist/easymde.min.css'
 
 export const metadata = {
   title: 'Next.js',

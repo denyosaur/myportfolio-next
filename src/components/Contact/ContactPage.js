@@ -5,8 +5,6 @@ import GithubIcon from '/public/icons/GithubIcon.svg';
 import InstagramIcon from '/public/icons/InstagramIcon.svg';
 import LinkedinIcon from '/public/icons/LinkedinIcon.svg';
 
-//import { iconDictionary } from './constants';
-
 function ContactPage({ contacts }) {
   const contactKeys = Object.keys(contacts);
   const iconToRender = {

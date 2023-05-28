@@ -1,0 +1,17 @@
+.blog-scroll {
+  scrollbar-width: none;
+}
+
+.blog-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-scroll2>div {
+  overflow: auto;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+.blog-scroll2>div::-webkit-scrollbar {
+  display: none;
+}

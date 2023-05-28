@@ -1,5 +1,7 @@
+import { codeInput } from '@sanity/code-input';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { markdownSchema } from "sanity-plugin-markdown/next";
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './src/schemas';
 import { sanityTheme } from './sanityTheme';
@@ -15,7 +17,12 @@ export default defineConfig({
   title: 'myportfolio-sanity',
   projectId,
   dataset,
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    codeInput(),
+    deskTool(),
+    markdownSchema(),
+    visionTool(),
+  ],
   schema: {
     types: schemaTypes,
   },
