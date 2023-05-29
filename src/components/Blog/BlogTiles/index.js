@@ -14,18 +14,18 @@ function BlogTiles({ post: { mainImage, publishedAt, slug, title } }) {
 
   return (
     <BlogRoute route={`/blog/post/${slug.current}`}>
-      <div className="flex items-end flex-col relative text-2xl w-[35rem] group cursor-pointer h-72 mb-6 rounded-md" >
-        <div className="relative w-full h-72 drop-shadow-xl transition-transform duration-200-ease-out rounded-md">
+      <div className="flex items-end flex-col relative text-2xl w-[20rem] sm:w-[35rem] group cursor-pointer h-52 sm:h-72 mb-6 rounded-md overflow-hidden" >
+        <div className="relative w-full h-full drop-shadow-xl transition-transform duration-200-ease-out rounded-md overflow-hidden">
           <Image
             alt="blog post image"
-            className="object-cover lg:object:center rounded-md"
+            className="object-cover sm:object-fill sm:object-left"
             src={urlFor(mainImage).url()}
             fill
           />
         </div>
-        <div className="flex flex-col absolute top-0 w-full bg-black rounded drop-shadow-lg text-white p-5 flex justify-between ">
-          <h2 className="text-xl">{title}</h2>
-          <p className="text-xl mt-2">{date}</p>
+        <div className="flex flex-col absolute top-0 w-full bg-black/[.8] rounded text-white p-3 sm:p-5 flex justify-between ">
+          <h2 className="text-lg sm:text-xl">{title}</h2>
+          <p className="text-base sm:text-xl mt-2">{date}</p>
         </div>
       </div>
     </BlogRoute>

@@ -6,7 +6,7 @@ import HomePage from "@component/components/HomePage/HomePage";
 import PreviewHomePage from "@component/components/HomePage/PreviewHomePage";
 import PreviewSuspense from '@component/components/PreviewSuspense';
 
-export const revalidate = 86400;
+export const revalidate = 21600;
 
 export default async function Page() {
   const authorQuery = groq`*[_type=='author'][0].name`;

@@ -3,12 +3,14 @@ import Link from "next/link";
 import urlFor from "../../../lib/urlFor";
 import PrismComponent from './PrismComponent';
 
+import './BlogPost.css';
+
 export const RichTextComponents = {
   li: ({ children }) => <li className="special-list-item">{children}</li>,
   span: ({ children }) => <p className="special-list-item">{children}</p>,
   normal: ({ children }) => <p className="special-list-item">{children}</p>,
   image: ({ asset }) => (
-    <div className="relative w-full h-72 m-10 mx-auto">
+    <div className="relative w-full h-56 sm:h-72 m-2 sm:m-10 mx-auto">
       <Image
         alt='blog post image'
         className="object-contain"
@@ -35,15 +37,18 @@ export const RichTextComponents = {
     </blockquote>
   ),
   myCodeField: ({ code, filename }) => (
-    <div className="relative w-full h-auto m-10 mx-auto whitespace-pre-wrap bg-[#36353b] rounded-lg">
-      <div className="flex justify-start items-center bg-gray-800 border-b-[0.1rem] h-9 px-4 h-10">
+    <div className="relative w-full max-w-4xl h-auto m-10 mx-auto whitespace-pre-wrap bg-[#36353b] rounded-lg">
+      <div className="flex justify-start items-center bg-gray-800 border-b-[0.1rem] h-8 px-4 h-10">
         <h3 className="font-bold">
           {filename}
         </h3>
       </div>
-      <PrismComponent>
-        {code}
-      </PrismComponent>
+      <div className="overflow-y-auto code-snippet">
+        <PrismComponent>
+          {code}
+        </PrismComponent>
+      </div>
+
     </div>
   ),
 };

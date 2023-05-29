@@ -3,11 +3,17 @@
 import React, { useEffect, useRef } from 'react';
 import Prism from 'prismjs';
 
+import "prismjs/components/prism-jsx";
+import "prismjs/themes/prism-twilight.css";
+
 const PrismComponent = ({ children }) => {
   const codeRef = useRef(null);
 
   useEffect(() => {
-    Prism.highlightAll();
+    const highlight = async () => {
+      await Prism.highlightAll(); // <--- prepare Prism 
+    };
+    highlight();
   }, []);
 
   return (
