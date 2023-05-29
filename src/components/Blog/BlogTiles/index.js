@@ -18,7 +18,7 @@ function BlogTiles({ post: { mainImage, publishedAt, slug, title } }) {
         <div className="relative w-full h-full drop-shadow-xl transition-transform duration-200-ease-out rounded-md overflow-hidden">
           <Image
             alt="blog post image"
-            className="object-cover sm:object-fill sm:object-left"
+            className="object-cover sm:object-left"
             src={urlFor(mainImage).url()}
             fill
           />

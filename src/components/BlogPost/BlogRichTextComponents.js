@@ -6,9 +6,11 @@ import PrismComponent from './PrismComponent';
 import './BlogPost.css';
 
 export const RichTextComponents = {
-  li: ({ children }) => <li className="special-list-item">{children}</li>,
-  span: ({ children }) => <p className="special-list-item">{children}</p>,
-  normal: ({ children }) => <p className="special-list-item">{children}</p>,
+  li: ({ children }) => <li className=" list-disc">{children}</li>,
+  ol: ({ children }) => <ol className="flex flex-col mx-10 my-3 list-item"> {children}</ol>,
+  ul: ({ children }) => <ul className="flex flex-col mx-10 my-3 list-item"> {children}</ul>,
+  span: ({ children }) => <p className="">{children}</p>,
+  normal: ({ children }) => <p className="">{children}</p>,
   image: ({ asset }) => (
     <div className="relative w-full h-56 sm:h-72 m-2 sm:m-10 mx-auto">
       <Image
