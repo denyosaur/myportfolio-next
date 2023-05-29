@@ -36,8 +36,11 @@ pnpm dev
             
 **Tech Stack**
 ---------------
+- animejs - v2.0.2
 - next - v13.2.4
+- prismjs - v1.27
 - react - v18.2.0
+- react-portable-text - v0.6.0
 - sanity - v3.0.0
 - tailwindcss - v3.3.0
 - @svgr/webpack - v7.0.0
