@@ -1,58 +1,42 @@
 "use client"
-import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 
-import Tile from './tile';
+import Tile from './Tile';
 
-const Background = ({ setGrid }) => {
+import { useWindowSize } from '../Page/hooks';
+
+const Background = ({ color, grid, setGrid }) => {
   const gridRef = useRef();
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  let columns = Math.floor(dimensions.width / 30);
-  let rows = Math.floor(dimensions.height / 30);
+  const [w1, h2] = useWindowSize();
 
   const createTiles = (quantity) => {
     return Array.from(Array(quantity)).map((tile, index) => {
-      return <Tile key={index} index={index} />
+      return <Tile key={index} index={index} color={color} />
     })
-  }
-
-  const handleResize = () => {
-    if (gridRef.current) {
-      setDimensions({
-        width: gridRef.current.offsetWidth,
-        height: gridRef.current.offsetHeight
-      });
-    }
   }
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize, false);
-    setGrid({ columns, rows });
-
     anime({
       targets: '.tile',
-      backgroundColor: 'rgb(27, 38, 59)',
+      backgroundColor: 'rgb(65, 90, 119)',
       delay: anime.stagger(40, {
-        grid: [columns, rows],
+        grid: [grid.columns, grid.rows],
         from: 1,
       })
     })
-    return window.removeEventListener('resize', handleResize);
-  }, [columns, rows, setGrid]);
+  }, [grid])
 
+  useEffect(() => {
+    let columns = Math.floor(w1 / 30);
+    let rows = Math.floor(h2 / 30);
 
-  useLayoutEffect(() => {
-    if (gridRef.current) {
-      setDimensions({
-        width: gridRef.current.offsetWidth,
-        height: gridRef.current.offsetHeight
-      });
-    }
-  }, []);
+    setGrid({ columns, rows });
+  }, [h2, w1, setGrid]);
 
   const gridStyles = () => ({
-    gridTemplateRows: `repeat(${rows}, 1fr)`,
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+    gridTemplateColumns: `repeat(${grid.columns}, 1fr)`,
     overflow: 'hidden',
   });
 
@@ -71,7 +55,8 @@ const Background = ({ setGrid }) => {
         className={`absolute tile-grid grid h-full w-full opacity-80`}
         style={gridStyles()}
       >
-        {createTiles(columns * rows)}
+        {console.log(w1, h2)}
+        {createTiles(grid.columns * grid.rows)}
       </div>
     </div>
   )

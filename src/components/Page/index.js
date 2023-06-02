@@ -8,6 +8,7 @@ import { colors } from './constants';
 
 const Page = ({ author, children }) => {
   const [count, setCount] = useState(0);
+  const [color, setColor] = useState('rgb(27, 38, 59)');
   const [grid, setGrid] = useState({ columns: 0, rows: 0 });
 
   const handleClick = (event) => {
@@ -15,12 +16,13 @@ const Page = ({ author, children }) => {
     const y = event.clientY;
     const elements = document.elementsFromPoint(x, y);
     const index = findTileIndex(elements)
+    setColor(colors[count % (colors.length - 1)])
 
     setCount(prev => prev + 1)
 
     anime({
       targets: '.tile',
-      backgroundColor: colors[count % (colors.length - 1)],
+      backgroundColor: color,
       delay: anime.stagger(40, {
         grid: [grid.columns, grid.rows],
         from: index,
@@ -45,7 +47,7 @@ const Page = ({ author, children }) => {
           {children}
         </div>
       </div>
-      <Background setGrid={setGrid} />
+      <Background grid={grid} setGrid={setGrid} color={color} />
     </>
   )
 }

@@ -11,12 +11,16 @@ import Cross from '/public/icons/Cross.svg'
 
 function Navbar({ author }) {
   const [navButton, setNavButtonClosed] = useState(true);
-  const pathname = usePathname().match(/^\/([^\/]+)/);
   const arrowClassNames = 'left-3 transition-all duration-1000 sm:absolute';
+  const pathname = usePathname();
+  const regex = /\/([^\/]*)\/(.*)/;
+  const match = pathname.match(regex);
+  const basePathname = match ? `/${match[1]}` : pathname;
+
   const clickHandler = () => {
     setNavButtonClosed(true);
   };
-  console.log(pathname[0])
+
   return (
     <nav className="absolute top-0 flex flex-col h-30 w-full p-3 bg-[#0D0C1D] z-[2] sm:static sm:bg-transparent sm:flex-col sm:w-[30rem] sm:h-80 sm:p-0">
       <div className="flex justify-between">
@@ -33,7 +37,7 @@ function Navbar({ author }) {
       <div className={`left-0 -bottom-30 w-full flex flex-col text-[1.6rem] bg-[#0D0C1D] sm:bg-transparent sm:block ${navButton ? 'hidden' : 'block'}`}>
         {Object.keys(navLinks).map(navLink => (
           <div className="flex flex-row items-center" key={navLinks[navLink]}>
-            <Arrow className={`${arrowClassNames} ${pathname[0] === navLinks[navLink] ? "opacity-100 visible" : "opacity-0 invisible"}`} />
+            <Arrow className={`${arrowClassNames} ${basePathname === navLinks[navLink] ? "opacity-100 visible" : "opacity-0 invisible"}`} />
             <Link
               className="transition duration-400 hover:opacity-60"
               href={navLinks[navLink]}
