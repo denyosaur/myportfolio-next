@@ -8,7 +8,7 @@ import { useWindowSize } from '../Page/hooks';
 
 const Background = ({ color, grid, setGrid }) => {
   const gridRef = useRef();
-  const [w1, h2] = useWindowSize();
+  const [width, height] = useWindowSize();
 
   const createTiles = (quantity) => {
     return Array.from(Array(quantity)).map((tile, index) => {
@@ -28,11 +28,11 @@ const Background = ({ color, grid, setGrid }) => {
   }, [grid])
 
   useEffect(() => {
-    let columns = Math.floor(w1 / 30);
-    let rows = Math.floor(h2 / 30);
+    let columns = Math.floor(width / 30);
+    let rows = Math.floor(height / 30);
 
     setGrid({ columns, rows });
-  }, [h2, w1, setGrid]);
+  }, [height, width, setGrid]);
 
 
   const gridStyles = () => ({
@@ -56,7 +56,6 @@ const Background = ({ color, grid, setGrid }) => {
         className={`absolute tile-grid grid h-full w-full opacity-80`}
         style={gridStyles()}
       >
-        {console.log(w1, h2)}
         {createTiles(grid.columns * grid.rows)}
       </div>
     </div>
