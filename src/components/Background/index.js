@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 
 import Tile from './Tile';
@@ -8,7 +8,7 @@ import { useWindowSize } from '../Page/hooks';
 
 const Background = ({ color, grid, setGrid }) => {
   const gridRef = useRef();
-  const [width, height] = useWindowSize();
+  const [w1, h2] = useWindowSize();
 
   const createTiles = (quantity) => {
     return Array.from(Array(quantity)).map((tile, index) => {
@@ -28,11 +28,12 @@ const Background = ({ color, grid, setGrid }) => {
   }, [grid])
 
   useEffect(() => {
-    let columns = Math.floor(width / 30);
-    let rows = Math.floor(height / 30);
+    let columns = Math.floor(w1 / 30);
+    let rows = Math.floor(h2 / 30);
 
     setGrid({ columns, rows });
-  }, [height, width, setGrid]);
+  }, [h2, w1, setGrid]);
+
 
   const gridStyles = () => ({
     gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
@@ -55,6 +56,7 @@ const Background = ({ color, grid, setGrid }) => {
         className={`absolute tile-grid grid h-full w-full opacity-80`}
         style={gridStyles()}
       >
+        {console.log(w1, h2)}
         {createTiles(grid.columns * grid.rows)}
       </div>
     </div>
