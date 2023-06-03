@@ -3,7 +3,7 @@
 **MyPortfolio**
 =====================================
 
-Portfolio site that showcases my skills and information about myself.
+Portfolio site that showcases my skills and information about myself and to create blog posts about my findings.
 
 [https://dhkportfolio.dev/](https://dhkportfolio.dev/)
 
