@@ -42,8 +42,8 @@ const Page = ({ author, children }) => {
         onClick={handleClick}
       >
         <Navbar author={author} />
-        <div className="h-40 w-full sm:hidden"></div>
-        <div className="flex h-full w-full px-5 pb-5 sm:p-0">
+        <div className="h-32 w-full sm:hidden"></div>
+        <div className="flex h-full w-full px-5 pb-5 pt-5 sm:p-0">
           {children}
         </div>
       </div>

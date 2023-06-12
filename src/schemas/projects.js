@@ -12,6 +12,13 @@ export default defineType({
       to: { type: 'author' },
     }),
     defineField({
+      description: 'Order of project',
+      name: 'orderNumber',
+      title: 'Order Number',
+      type: 'number',
+      validation: Rule => Rule.required().warning('Must have a order number!'),
+    }),
+    defineField({
       description: 'Enter project name',
       name: 'projectName',
       title: 'ProjectName',
