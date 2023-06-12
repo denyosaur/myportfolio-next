@@ -11,6 +11,7 @@ export default async function Projects() {
   const authorReq = await client.fetch(authorQuery);
   const projectsQuery = groq`
     *[_type == "projects" && author._ref in *[_type=="author" && name=="${authorReq}"]._id ]
+    | order(orderNumber asc)
     { projectName, projectUrl, githubLink, image, tools }
   `;
   const projectsReq = await client.fetch(projectsQuery);
@@ -30,7 +31,7 @@ export default async function Projects() {
   }
 
   return (
-    <div className="flex justify-end items-end w-full h-full">
+    <div className="flex relative justify-end items-end w-full h-full">
       <ProjectsPage projects={projectsReq} />
     </div>
   )
